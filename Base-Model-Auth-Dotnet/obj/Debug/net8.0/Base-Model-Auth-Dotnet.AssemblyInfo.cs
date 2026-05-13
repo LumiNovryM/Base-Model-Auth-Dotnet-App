@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Base-Model-Auth-Dotnet")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e131dcd309185e98e6f99c28a31d4ed38cc29d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ac2549b785dd743048aaf425d0f94ab95abbfb9")]
 [assembly: System.Reflection.AssemblyProductAttribute("Base-Model-Auth-Dotnet")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Base-Model-Auth-Dotnet")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -17,9 +17,14 @@ namespace Base_Model_Auth_Dotnet.Controllers
         }
 
         [HttpPost("register-exec")]
-        public IActionResult Register(RegisterRequest request)
+        public IActionResult Register([FromBody] RegisterRequest request)
         {
             var result = _authService.Register(request);
+
+            if (!result.Success)
+            {
+                return BadRequest(result); 
+            }
 
             return Ok(result);
         }
