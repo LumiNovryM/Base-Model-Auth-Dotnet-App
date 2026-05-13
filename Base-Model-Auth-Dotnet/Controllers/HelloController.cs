@@ -1,10 +1,11 @@
+using Base_Model_Auth_Dotnet.Constants;
 using Base_Model_Auth_Dotnet.Models.DTOs.Responses;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Base_Model_Auth_Dotnet.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route(ApiRoutes.Hello.Root)]
     public class HelloController : ControllerBase
     {
         [HttpGet]
