@@ -2,6 +2,7 @@ namespace Base_Model_Auth_Dotnet.Constants
 {
     public static class ApiRoutes
     {
+        // Base API Route
         public const string Base = "api/v1";
 
         // Hello Endpoint For Testing Sample

@@ -11,6 +11,7 @@ namespace Base_Model_Auth_Dotnet.Controllers
         [HttpGet]
         public IActionResult Get()
         {
+            // Sample Response For Testing The API Endpoint
             var response = new HelloResponse
             {
                 Message = "Hello World"

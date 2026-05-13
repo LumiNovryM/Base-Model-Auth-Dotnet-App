@@ -7,41 +7,42 @@ namespace Base_Model_Auth_Dotnet.Services
 {
     public class AuthService : IAuthService
     {
-        // temporary fake database
+        // Temporary Fake Database
         private static List<User> users = new();
 
         public BaseResponse<object> Register(RegisterRequest request)
         {
-            // VALIDATION START
+            // Validation Register Logic Start Here
 
             if (string.IsNullOrWhiteSpace(request.Username))
             {
-                return BaseResponse<object>.ErrorResponse("Username tidak boleh kosong");
+                return BaseResponse<object>.ErrorResponse("Username tidak boleh kosong", 400);
             }
 
             if (string.IsNullOrWhiteSpace(request.Password))
             {
-                return BaseResponse<object>.ErrorResponse("Password tidak boleh kosong");
+                return BaseResponse<object>.ErrorResponse("Password tidak boleh kosong", 400);
             }
 
             if (request.Password.Length < 8)
             {
-                return BaseResponse<object>.ErrorResponse("Password harus minimal 8 karakter");
+                return BaseResponse<object>.ErrorResponse("Password harus minimal 8 karakter", 400);
             }
 
             if (!request.Password.Any(ch => !char.IsLetterOrDigit(ch)))
             {
-                return BaseResponse<object>.ErrorResponse("Password harus mengandung minimal 1 simbol");
+                return BaseResponse<object>.ErrorResponse("Password harus mengandung minimal 1 simbol", 400);
             }
 
-            // VALIDATION END
 
             var existingUser = users.FirstOrDefault(x => x.Username == request.Username);
 
             if (existingUser != null)
             {
-                return BaseResponse<object>.ErrorResponse("Username already registered");
+                return BaseResponse<object>.ErrorResponse("Username already registered", 409);
             }
+
+            // Validation Register Logic End Here
 
             var user = new User
             {
