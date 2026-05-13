@@ -10,27 +10,6 @@ namespace Base_Model_Auth_Dotnet.Controllers
     [Route(ApiRoutes.Auth.Register)]
     public class AuthController : ControllerBase
     {
-        //private readonly IAuthService _authService;
-
-        //public AuthController(IAuthService authService)
-        //{
-        //    _authService = authService;
-        //}
-
-        //// Execution Endpoint For Registering A New User
-        //[HttpPost("register-exec")]
-        //public IActionResult Register([FromBody] RegisterRequest request)
-        //{
-        //    var result = _authService.Register(request);
-
-        //    if (!result.Success)
-        //    {
-        //        return BadRequest(result); 
-        //    }
-
-        //    return Ok(result);
-        //}
-
         private readonly IAuthService _authService;
 
         public AuthController(IAuthService authService)
