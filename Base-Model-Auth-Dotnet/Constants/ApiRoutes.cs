@@ -15,8 +15,6 @@ namespace Base_Model_Auth_Dotnet.Constants
         public static class Auth
         {
             public const string Root = Base + "/auth";
-            public const string Register = Root + "/register";
-            public const string Login = Root + "/login";
         }
     }
 }
