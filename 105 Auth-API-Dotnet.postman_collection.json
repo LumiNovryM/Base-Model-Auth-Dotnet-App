@@ -1,0 +1,382 @@
+{
+  "info": {
+    "_postman_id": "b22bd10e-a11e-43b9-9e73-fc49afa36a5a",
+    "name": "105 Auth-API-Dotnet",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "24153349"
+  },
+  "item": [
+    {
+      "name": "Register Schema",
+      "item": [
+        {
+          "name": "Create User - Positive Case",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"Mysql@2023\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User - Negative Case - Username is empty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"Mysql@2023\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User - Negative Case - Password is empty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User  - Negative Case - Username and Password is empty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User  - Negative Case - Password Length (Atleast 8 Char)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"Mysql@\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User  - Negative Case - Password Char (Atleast 1 Unique Char)",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"Mysql2023\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create User - Negative Case - User Already Exist",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"Mysql@2023\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/register-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "register-exec"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Login Schema",
+      "item": [
+        {
+          "name": "Login - Positive Case",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"Lumi\",\r\n  \"password\": \"Mysql@2023\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/login-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login - Negative Case - Username is empty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/login-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login - Negative Case - Password is empty",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"\",\r\n  \"password\": \"\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/login-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login-exec"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login - Negative Case - Username or Password is not valid",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"username\": \"string\",\r\n  \"password\": \"string\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:5031/api/v1/auth/login-exec",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5031",
+              "path": [
+                "api",
+                "v1",
+                "auth",
+                "login-exec"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Sample Test Connection",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5031/api/v1/hello",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5031",
+          "path": [
+            "api",
+            "v1",
+            "hello"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

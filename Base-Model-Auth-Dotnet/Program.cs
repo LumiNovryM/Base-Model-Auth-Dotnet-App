@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,7 +20,44 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 // Auth Service
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+
+// Convert SwaggerGen to JWT Authentication
+builder.Services.AddSwaggerGen(options =>
+{
+    // Swagger Doc
+    options.SwaggerDoc("v1", new OpenApiInfo
+    {
+        Title = "Base Model Auth API",
+        Version = "v1"
+    });
+
+    // JWT Auth
+    options.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        Scheme = "bearer",
+        BearerFormat = "JWT",
+        In = ParameterLocation.Header,
+        Description = "Input JWT token like this: Bearer {your_token}"
+    });
+
+    // Require JWT Auth
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type = ReferenceType.SecurityScheme,
+                    Id = "Bearer"
+                }
+            },
+            Array.Empty<string>()
+        }
+    });
+});
 
 // JWT Authentication
 var jwtKey = builder.Configuration["Jwt:Key"];
