@@ -18,9 +18,9 @@ namespace Base_Model_Auth_Dotnet.Controllers
         }
 
         [HttpPost("register-exec")]
-        public IActionResult Register([FromBody] RegisterRequest request)
+        public async Task<IActionResult> Register([FromBody] RegisterRequest request)
         {
-            var result = _authService.Register(request);
+            var result = await _authService.Register(request);
 
             return result.ToActionResult();
         }

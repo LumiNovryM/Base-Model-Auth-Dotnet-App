@@ -138,3 +138,4 @@ C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet\Base-Model
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet\Base-Model-Auth-Dotnet\obj\Debug\net8.0\Base-Model-Auth-Dotnet.pdb
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet\Base-Model-Auth-Dotnet\obj\Debug\net8.0\Base-Model-Auth-Dotnet.genruntimeconfig.cache
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet\Base-Model-Auth-Dotnet\obj\Debug\net8.0\ref\Base-Model-Auth-Dotnet.dll
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet\Base-Model-Auth-Dotnet\bin\Debug\net8.0\BCrypt-Net-Next.dll

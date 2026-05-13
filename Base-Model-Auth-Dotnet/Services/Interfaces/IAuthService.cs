@@ -5,6 +5,6 @@ namespace Base_Model_Auth_Dotnet.Services.Interfaces
 {
     public interface IAuthService
     {
-        BaseResponse<object> Register(RegisterRequest request);
+        Task<BaseResponse<object>> Register(RegisterRequest request);
     }
 }
