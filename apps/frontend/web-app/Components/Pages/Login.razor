@@ -16,51 +16,38 @@
         Login To Your Account
     </div>
 
-    <div class="card-body d-flex flex-row">
+    <div class="card-body">
 
-        <EditForm Model="@model" OnValidSubmit="HandleLogin">
+        <EditForm Model="@model" OnValidSubmit="HandleLogin" FormName="LoginForm">
 
             <div class="mb-3">
-                <label for="usernameInput" class="form-label">
-                    Username
-                </label>
+                <label>Username</label>
 
-                <InputText class="form-control"
-                           id="usernameInput"
-                           @bind-Value="model.Username" />
-
-                <div class="form-text">
-                    We'll never share your username with anyone else.
-                </div>
+                <InputText class="form-control" id="usernameInput" @bind-Value="model.Username" />
             </div>
 
             <div class="mb-3">
-                <label for="passwordInput" class="form-label">
-                    Password
-                </label>
+                <label>Password</label>
 
-                <InputText type="password"
-                           class="form-control"
-                           id="passwordInput"
-                           @bind-Value="model.Password" />
+                <InputText type="password" class="form-control" id="passwordInput" @bind-Value="model.Password" />
             </div>
 
             <button type="submit" class="btn btn-primary">
                 Submit
             </button>
 
-            @if (!string.IsNullOrWhiteSpace(errorMessage))
-            {
-                <div class="text-danger mt-3">
-                    @errorMessage
-                </div>
-            }
-
         </EditForm>
+
+        @if (!string.IsNullOrWhiteSpace(errorMessage))
+        {
+            <div class="text-danger mt-3">
+                @errorMessage
+            </div>
+        }
 
     </div>
 
-    <div class="card-footer text-body-secondary">
+    <div class="card-footer">
         Don't have an account?
         <a href="/register">Register here</a>
     </div>
@@ -69,23 +56,23 @@
 @code {
 
     private LoginRequest model = new();
-
     private string errorMessage = string.Empty;
 
     private async Task HandleLogin()
     {
-        errorMessage = string.Empty;
+        Console.WriteLine("=== LOGIN PAYLOAD ===");
+        Console.WriteLine($"Username: {model.Username}");
+        Console.WriteLine($"Password: {model.Password}");
 
-        var success = await AuthService.LoginAsync(model);
+        var (success, message) = await AuthService.LoginAsync(model);
 
         if (!success)
         {
-            errorMessage = "Invalid username or password.";
+            errorMessage = message;
             return;
         }
 
-        if (AuthStateProvider
-            is CustomAuthenticationStateProvider customAuth)
+        if (AuthStateProvider is CustomAuthenticationStateProvider customAuth)
         {
             customAuth.NotifyAuthenticationStateChanged();
         }

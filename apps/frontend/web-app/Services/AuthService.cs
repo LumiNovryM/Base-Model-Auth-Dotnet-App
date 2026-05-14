@@ -20,26 +20,39 @@ public class AuthService
         _tokenService = tokenService;
     }
 
-    public async Task<bool> LoginAsync(LoginRequest request)
+    public async Task<(bool Success, string Message)> LoginAsync(LoginRequest request)
     {
         var response = await _httpClient.PostAsJsonAsync(
             ApiEndpoints.Login,
             request);
 
-        if (!response.IsSuccessStatusCode)
-            return false;
+        var rawResponse = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(rawResponse);
 
         var result =
-            await response.Content.ReadFromJsonAsync<
-                BaseResponse<LoginResponse>>();
+            System.Text.Json.JsonSerializer.Deserialize<BaseResponse<LoginResponse>>(
+                rawResponse,
+                new System.Text.Json.JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                });
+
+        if (!response.IsSuccessStatusCode)
+        {
+            return (false, result?.Message ?? "Login failed");
+        }
 
         if (result is null || !result.Success)
-            return false;
+        {
+            return (false, result?.Message ?? "Login failed");
+        }
 
         await _tokenService.SetTokenAsync(result.Data!.Token);
 
-        return true;
+        return (true, result.Message);
     }
+
 
     public async Task<bool> ValidateTokenAsync()
     {
