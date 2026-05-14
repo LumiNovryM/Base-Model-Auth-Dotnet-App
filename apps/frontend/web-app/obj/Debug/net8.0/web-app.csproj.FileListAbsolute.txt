@@ -1,11 +1,3 @@
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\rpswa.dswa.cache.json
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.GeneratedMSBuildEditorConfig.editorconfig
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.AssemblyInfoInputs.cache
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.AssemblyInfo.cs
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.csproj.CoreCompileInputs.cache
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.MvcApplicationPartsAssemblyInfo.cache
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.sourcelink.json
-C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.csproj.AssemblyReference.cache
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\appsettings.Development.json
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\appsettings.json
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\web-app.staticwebassets.runtime.json
@@ -16,6 +8,14 @@ C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\f
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\web-app.dll
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\web-app.pdb
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\bin\Debug\net8.0\Blazored.LocalStorage.dll
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.csproj.AssemblyReference.cache
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.GeneratedMSBuildEditorConfig.editorconfig
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.AssemblyInfoInputs.cache
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.AssemblyInfo.cs
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.csproj.CoreCompileInputs.cache
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.MvcApplicationPartsAssemblyInfo.cache
+C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\web-app.sourcelink.json
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Test Interview Lumi Novri M\Test 3 - Coding\Base-Model-Auth-Dotnet-App\apps\frontend\web-app\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json

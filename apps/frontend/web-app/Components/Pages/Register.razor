@@ -1,27 +1,81 @@
 ﻿@page "/register"
 @attribute [StreamRendering]
 
+
+@using web_app.Models.Requests
+@using web_app.Services
+
+@inject AuthService AuthService
+@inject NavigationManager Navigation
+
 <PageTitle>Register</PageTitle>
 
 <div class="card">
+
     <div class="card-header text-center">
-        Create Your Account
+        Create Account
     </div>
-    <div class="card-body d-flex flex-row">
-        <form>
+
+    <div class="card-body">
+
+        <EditForm Model="@model" OnValidSubmit="HandleRegister">
+
             <div class="mb-3">
-                <label for="exampleInputUsername1" class="form-label">Username</label>
-                <input type="text" class="form-control" id="exampleInputUsername1" aria-describedby="usernameHelp">
-                <div id="usernameHelp" class="form-text">We'll never share your username with anyone else.</div>
+                <label>Username</label>
+
+                <InputText class="form-control"
+                           @bind-Value="model.Username" />
             </div>
+
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label>Password</label>
+
+                <InputText type="password"
+                           class="form-control"
+                           @bind-Value="model.Password" />
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+
+            <button type="submit" class="btn btn-primary">
+                Register
+            </button>
+
+        </EditForm>
+
+        @if (!string.IsNullOrWhiteSpace(message))
+        {
+            <div class="mt-3 text-danger">
+                @message
+            </div>
+        }
+
     </div>
-    <div class="card-footer text-body-secondary">
-        Already have an account? <a href="/">Login here</a>
+
+    <div class="card-footer">
+        Already have an account?
+        <a href="/">Login here</a>
     </div>
+
 </div>
+
+@code {
+
+    private RegisterRequest model = new();
+
+    private string message = string.Empty;
+
+    private async Task HandleRegister()
+    {
+        message = string.Empty;
+
+        var (success, responseMessage) =
+            await AuthService.RegisterAsync(model);
+
+        if (!success)
+        {
+            message = responseMessage;
+            return;
+        }
+
+        Navigation.NavigateTo("/", true);
+    }
+}
