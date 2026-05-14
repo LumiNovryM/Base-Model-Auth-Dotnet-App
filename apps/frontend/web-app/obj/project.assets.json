@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet\\apps\\frontend\\web-app\\web-app.csproj",
+      "projectUniqueName": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet-App\\apps\\frontend\\web-app\\web-app.csproj",
       "projectName": "web-app",
-      "projectPath": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet\\apps\\frontend\\web-app\\web-app.csproj",
+      "projectPath": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet-App\\apps\\frontend\\web-app\\web-app.csproj",
       "packagesPath": "C:\\Users\\Suprapto Machine\\.nuget\\packages\\",
-      "outputPath": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet\\apps\\frontend\\web-app\\obj\\",
+      "outputPath": "C:\\Test Interview Lumi Novri M\\Test 3 - Coding\\Base-Model-Auth-Dotnet-App\\apps\\frontend\\web-app\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
