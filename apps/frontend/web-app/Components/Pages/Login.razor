@@ -5,6 +5,7 @@
 @using web_app.Providers
 @using Microsoft.AspNetCore.Components.Authorization
 
+@inject IJSRuntime JS
 @inject AuthService AuthService
 @inject NavigationManager Navigation
 @inject AuthenticationStateProvider AuthStateProvider
@@ -53,16 +54,54 @@
     </div>
 </div>
 
+<div class="modal fade" id="loginSuccessModal" tabindex="-1" aria-labelledby="loginSuccessModalLabel"
+     aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="loginSuccessModalLabel">
+                    Login Success
+                </h5>
+            </div>
+
+            <div class="modal-body">
+                Welcome back!
+            </div>
+
+            <div class="modal-footer">
+
+                <button type="button" class="btn btn-primary" @onclick="GoToWelcome">
+                    OK
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 @code {
 
     private LoginRequest model = new();
     private string errorMessage = string.Empty;
+
+    private void GoToWelcome()
+    {
+        Navigation.NavigateTo("/welcome", true);
+    }
 
     private async Task HandleLogin()
     {
         Console.WriteLine("=== LOGIN PAYLOAD ===");
         Console.WriteLine($"Username: {model.Username}");
         Console.WriteLine($"Password: {model.Password}");
+
+        
 
         var (success, message) = await AuthService.LoginAsync(model);
 
@@ -77,6 +116,9 @@
             customAuth.NotifyAuthenticationStateChanged();
         }
 
-        Navigation.NavigateTo("/welcome");
+
+        await JS.InvokeVoidAsync(
+   "showBootstrapModal",
+   "loginSuccessModal");
     }
 }

@@ -5,6 +5,7 @@
 @using web_app.Models.Requests
 @using web_app.Services
 
+@inject IJSRuntime JS
 @inject AuthService AuthService
 @inject NavigationManager Navigation
 
@@ -57,11 +58,52 @@
 
 </div>
 
+<div class="modal fade"
+     id="successModal"
+     tabindex="-1"
+     aria-labelledby="successModalLabel"
+     aria-hidden="true">
+
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="successModalLabel">
+                    Register Success
+                </h5>
+            </div>
+
+            <div class="modal-body">
+                Your account has been created successfully.
+            </div>
+
+            <div class="modal-footer">
+                <button type="button"
+                        class="btn btn-primary"
+                        @onclick="GoToLogin">
+                    OK
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
 @code {
+
+
 
     private RegisterRequest model = new();
 
     private string message = string.Empty;
+
+    private void GoToLogin()
+    {
+        Navigation.NavigateTo("/", true);
+    }
 
     private async Task HandleRegister()
     {
@@ -76,6 +118,6 @@
             return;
         }
 
-        Navigation.NavigateTo("/", true);
+        await JS.InvokeVoidAsync("showBootstrapModal", "successModal");
     }
 }
